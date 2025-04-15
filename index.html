@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            animation: slideIn 3s ease-in-out infinite alternate;
+        }
+
+        .balloons {
+            position: absolute;
+            bottom: -150px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .balloon {
+            width: 80px;
+            height: 120px;
+            background: radial-gradient(circle, #ff6f61, #ff3d3d);
+            border-radius: 50%;
+            position: relative;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(2) {
+            background: radial-gradient(circle, #6fa8dc, #3d85c6);
+            animation-delay: 1s;
+        }
+
+        .balloon:nth-child(3) {
+            background: radial-gradient(circle, #93c47d, #6aa84f);
+            animation-delay: 2s;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 50px;
+            background: white;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-50px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <p>Wishing you a day filled with love and joy!</p>
+    </div>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+</body>
+</html>
